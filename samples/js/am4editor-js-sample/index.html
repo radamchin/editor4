@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <title>Sample Chart Editor APP</title>
+    <link rel="stylesheet" media="all" href="index.css" />
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <script src="https://unpkg.com/@amcharts/editor4/editor.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <div className="App">
+      <header>
+        <div className="logo">
+          <a href="#home" onClick="myLauncher.menuSwitch('home')">amCharts 4 Editor Demo</a>
+        </div>
+      </header>
+
+      <nav>
+        <ul className="menu menu-primary">
+          <li>
+            <div className="menu-item-text">
+              <a href="#new-chart" onClick="myLauncher.menuSwitch('new-chart');"
+                >New chart</a>
+            </div>
+          </li>
+          <li>
+            <div className="menu-item-text">
+              <a href="#edit-chart" onClick="myLauncher.menuSwitch('edit-chart');"
+                >Edit chart</a></div>
+          </li>
+          <li>
+            <div className="menu-item-text">
+              <a href="#new-chart-from-data" onClick="myLauncher.menuSwitch('new-chart-from-data')"
+              >New chart from data</a></div>
+          </li>
+          <li>
+            <div className="menu-item-text">
+              <a href="#edit-chart-type" onClick="myLauncher.menuSwitch('edit-chart-type')"
+                >Edit chart type</a></div>
+          </li>
+
+        </ul>
+
+        <ul className="menu menu-secondary">
+          <li onClick="myLauncher.menuSwitch('settings')">
+            <div className="menu-item-text">Settings</div>
+          </li>
+        </ul>
+      </nav>
+
+      <main>
+
+        <div className="hello" id="home">
+          <h1>amCharts 4 Editor Usage Demos</h1>
+          <p>This sample project demonstrates common scenarios for using amCharts 4 Editor in your CMS:</p>
+          <ol>
+            <li><b>New chart</b> &mdash; allow users to freely create a new chart from templates.</li>
+            <li><b>Edit chart</b> &mdash; users can edit properties of the chart and its data but can't change its type/template.</li>
+            <li><b>New chart from data</b> &mdash; users can create new charts based on supplied preset data.</li>
+            <li><b>Edit chart type</b> &mdash; users can apply different templates to a previously created chart.</li>
+            <li><b>Settings</b> &mdash; shows how to modify some of the Editor configuration settings.</li>
+          </ol>
+          <h2>Setting up your own app</h2>
+          <p>Note that in addition to using the code in these demos you also need to setup your 
+            build process to copy the Editor application files into your output destination.</p>
+          <p>In this sample we simply added a script to <code>package.json</code> to copy it during build.</p>
+        </div>
+
+        <div className="new-chart" id="new-chart" style="display: none;">
+          <div className="page-intro">
+            <h1>Create a brand new chart</h1>
+            <p>
+              Create a brand new chart from standard (included) templates.
+            </p>
+          </div>
+          <div className="chartdiv" id="chartdiv" style={{backgroundColor: this.previewBackgroundColor}}>
+            <div className="placeholder" onClick={this.launchEditor}>click here to create a new chart</div>
+          </div>
+          <div className="comments">
+            <h2>Comments</h2>
+            <p>Built-in (bundled) templates are disabled by default so the user doesn't get access 
+              to them by simply refreshing the browser window (when used with 'window' target type).
+              To enable built-in (bundled) templates set <code>editorConfig.allowDefaultTemplates = true</code> in the launcher configuration.</p>
+          </div>
+        </div>
+
+        <!-- {this.state.currentPage === 'home' && <Home />}
+
+        {this.state.currentPage === 'new-chart' && 
+          <NewChart 
+            launcherSettings={this.state.launcherSettings} 
+          />
+        }
+        {this.state.currentPage === 'edit-chart' && 
+          <EditChart 
+            launcherSettings={this.state.launcherSettings} 
+          />
+        }
+        {this.state.currentPage === 'new-chart-from-data' && 
+          <NewChartFromData 
+            launcherSettings={this.state.launcherSettings} 
+          />
+        }
+        {this.state.currentPage === 'edit-chart-type' && 
+          <EditChartType
+            launcherSettings={this.state.launcherSettings} 
+          />
+        }
+        {this.state.currentPage === 'settings' && 
+          <Settings 
+            launcherSettings={this.state.launcherSettings} 
+            allModules={this.allModules} 
+            allThemes={this.allThemes} 
+            onTargetChanged={this.setTargetType}
+            onModuleToggled={this.toggleModule}
+            onThemeToggled={this.toggleTheme}
+          />
+        } -->
+      </main>
+
+    </div>
+  </body>
+</html>
