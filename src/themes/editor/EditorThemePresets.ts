@@ -5,20 +5,20 @@ const defaultTheme: IEditorTheme = {
 
   uiLibThemeClassName: 'bp3-dark',
 
-  background: 'white',
+  background: 'white', // white
   textColor: '#444444',
 
-  moduleBarBackground: '#505771',
+  moduleBarBackground: 'white', //'#505771',
 
-  headerBarBackground: '#2d232e',
+  headerBarBackground: 'black',
   headerTextColor: '#ffffff',
 
-  previewAreaBackground: '#F6F6F7',
+  previewAreaBackground: '#f7f6f2',
 
   propertyPanelBackground: '#535364',
   propertyPanelGridColor: 'rgba(0,0,0,.1)',
   propertyPanelTextColor: '#333',
-  propertyPanelAccentColor: '#8CA9D4',
+  propertyPanelAccentColor: 'white', // '#8CA9D4',
   propertyPanelItemHoverBackground: 'rgba(116,116,130,.3)',
   propertyPanelItemExpandedBackground: '#464654'
 };

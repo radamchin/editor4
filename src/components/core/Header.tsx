@@ -7,7 +7,7 @@ import { StyleClass, css } from '../../utils/Style';
 
 import editorTheme from './../../themes/editor/EditorTheme';
 
-import logo from './../../assets/amcharts_dark.svg';
+import logo from './../../assets/wat-logo-h-white.svg'; // amcharts_dark
 
 const headerStyle = new StyleClass(
   row,
@@ -23,13 +23,14 @@ const headingStyle = new StyleClass(
   stretch,
   css`
     padding-left: 5px;
-    font-weight: 100;
+    font-weight: 400;
   `
 );
 
 const logoStyle = new StyleClass(css`
-  width: 86px;
-  max-width: 86px;
+  padding-top: 8px;
+  width: 188px;
+  max-width: 188px;
 `);
 
 interface IHeaderProps {
@@ -44,13 +45,13 @@ class Header extends Component<IHeaderProps> {
       <div className={`${headerStyle.className}`}>
         {this.props.showLogo && (
           <a
-            href="https://amcharts.com"
+            href="http://" // https://amcharts.com
             target="_blank"
             rel="noreferrer noopener"
           >
             <img
               src={logo}
-              alt="amCharts editor"
+              alt="Chart editor"
               className={logoStyle.className}
             />
           </a>
