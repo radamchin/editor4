@@ -259,7 +259,20 @@ export default class PropertyConfigManager {
               } else if (
                 PropertyConfigManager.getPropertyTypeFamily(p) === 'array'
               ) {
-                result[p.name] = p.value;
+                result[p.name] = [];
+                p.value.forEach((val: string | undefined) => {
+                  if (
+                    val !== undefined &&
+                    !isNaN(parseFloat(val)) &&
+                    parseFloat(val).toString() === val.toString()
+                  ) {
+                    // number - add converted
+                    result[p.name].push(parseFloat(val));
+                  } else {
+                    // push as is
+                    result[p.name].push(val);
+                  }
+                });
               }
             }
             if (p.properties && p.properties.length > 0) {
@@ -780,6 +793,7 @@ export default class PropertyConfigManager {
 
               Object.keys(chartPropValue._dictionary).forEach(st => {
                 const stateConfig =
+                  subConfig !== undefined &&
                   (subConfig as any).states !== undefined &&
                   (subConfig as any).states[st] !== undefined
                     ? (subConfig as any).states[st].properties
