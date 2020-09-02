@@ -17,6 +17,7 @@ import SelectEditor from './editors/SelectEditor';
 import SimpleArrayEditor from './editors/SimpleArrayEditor';
 import ReadOnlyEditor from './editors/ReadOnlyEditor';
 import DataFieldEditor from './editors/DataFieldEditor';
+import ColorEditor from './editors/ColorEditor';
 
 const propertyEditorStyle = new StyleClass(css`
   display: flex;
@@ -51,7 +52,10 @@ class SinglePropertyPanel extends Component<IPropertyEditorProps> {
       <div key={p.name} className={propertyEditorStyle.className}>
         <div className={propertyEditorLabelStyle.className}>
           <Text ellipsize={true}>
-            {PropertyEditorHelpers.getDisplayName(p)}
+            {PropertyEditorHelpers.getDisplayName(
+              p,
+              this.props.editorState.language
+            )}
           </Text>
           {(p.isSet || p.isUserSet) && (
             <Popover
@@ -147,7 +151,7 @@ class SinglePropertyPanel extends Component<IPropertyEditorProps> {
       }
       case 'PropertyFields':
       case 'object': {
-        return <ObjectEditor property={p} {...this.props} />;
+        return <ObjectEditor {...this.props} />;
       }
       case 'select': {
         return (
@@ -163,7 +167,7 @@ class SinglePropertyPanel extends Component<IPropertyEditorProps> {
       case 'Color--LinearGradient--Pattern--RadialGradient': {
         // @todo implement proper editor - string editor for now
         return (
-          <StringEditor
+          <ColorEditor
             key={p.name}
             property={p}
             editorState={this.props.editorState}
