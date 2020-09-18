@@ -7,7 +7,10 @@ import { StyleClass, css } from '../../utils/Style';
 
 import editorTheme from './../../themes/editor/EditorTheme';
 
-import logo from './../../assets/wat-logo-h-white.svg'; // amcharts_dark
+import logo from './../../assets/wat-logo-h-white.svg';
+
+//import logo from './../../assets/amcharts_dark.svg';
+import { Language } from '../../utils/Language';
 
 const headerStyle = new StyleClass(
   row,
@@ -34,6 +37,7 @@ const logoStyle = new StyleClass(css`
 `);
 
 interface IHeaderProps {
+  lang: Language;
   actionButtonsEnabled: boolean;
   showLogo: boolean;
   handleActionButtonClick: (isOK: boolean) => void;
@@ -41,6 +45,7 @@ interface IHeaderProps {
 
 class Header extends Component<IHeaderProps> {
   public render() {
+    const lang = this.props.lang;
     return (
       <div className={`${headerStyle.className}`}>
         {this.props.showLogo && (
@@ -56,21 +61,23 @@ class Header extends Component<IHeaderProps> {
             />
           </a>
         )}
-        <h2 className={headingStyle.className}>Chart Editor</h2>
+        <h2 className={headingStyle.className}>
+          {lang.getUiTranslation('app.title', 'Chart Editor')}
+        </h2>
         {this.props.actionButtonsEnabled && (
           <div className={editorTheme.uiLibThemeClassName}>
             <Button
               icon="tick"
               minimal={true}
               intent="success"
-              text="save"
+              text={lang.getUiTranslation('app.save_button', 'save')}
               onClick={() => this.props.handleActionButtonClick(true)}
             />
             <Button
               icon="cross"
               minimal={true}
               intent="danger"
-              title="close"
+              title={lang.getUiTranslation('app.close_button', 'close')}
               onClick={() => this.props.handleActionButtonClick(false)}
             />
           </div>
