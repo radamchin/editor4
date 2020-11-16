@@ -67,6 +67,7 @@
         "data.paste_csv_button": "Paste CSV",
         "data.table_tab": "Table",
         "data.json_tab": "JSON",
+        "data.external_data": "chart uses external data source",
         "data.column_empty_prompt": "Column cannot be empty, delete column?",
         "data.column_exists_prompt": "Column already exists, merge columns?",
         "data.json_not_array_error": "JSON data must be an array",
@@ -91,7 +92,7 @@
         "csv_import.import_button": "Import...",
         "code.json_tab": "JSON config",
         "code.es2015_tab": "ES2015/TypeScript with JSON",
-        "code.html_js_tab": "HTML &amp; JavaScript",
+        "code.html_js_tab": "HTML & JavaScript",
         "code.object_js_tab": "Object-style ES2015"
     },
     "common": {

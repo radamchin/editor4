@@ -387,16 +387,16 @@ export default class PropertyConfigManager {
               prevGroup = p.groupName;
             }
 
-            const pModule =
-              p.value.modules === undefined
-                ? localModule
-                : p.value.modules.length === 1
-                ? p.value.modules[0]
-                : p.value.modules.indexOf(localBaseModule) > -1
-                ? localBaseModule
-                : p.value.modules[0];
-
             if (p.value !== undefined) {
+              const pModule =
+                p.value.modules === undefined
+                  ? localModule
+                  : p.value.modules.length === 1
+                  ? p.value.modules[0]
+                  : p.value.modules.indexOf(localBaseModule) > -1
+                  ? localBaseModule
+                  : p.value.modules[0];
+
               if (p.name === 'states') {
                 // special case for states
                 if (p.isSet || p.isUserSet) {
@@ -710,6 +710,14 @@ export default class PropertyConfigManager {
       document.body.appendChild(helperDiv);
 
       const helperChart = am4core.createFromConfig(renderConfigCopy, helperDiv);
+      if (helperChart.className !== (renderConfigCopy as any).type) {
+        console.log('ERROR creating chart.');
+        console.log(
+          `IMPORTANT: do not pass your raw chart configuration object to amCharts and the Editor.
+Always create a copy of your config object before passing it to the charts.
+Always include chart type in your JSON config you pass to the Editor.`
+        );
+      }
       helperChart.events.on('ready', () => {
         const result = PropertyConfigManager.chartPartToProperty(
           helperChart,

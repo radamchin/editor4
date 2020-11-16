@@ -88,6 +88,8 @@ export default {
   'data.json_not_array_error': 'JSON data must be an array',
   'data.json_format_error': 'Malformed JSON',
 
+  'data.external_data': 'chart uses external data source',
+
   'file_import.title': 'Import data from a file',
   'file_import.prompt': 'Select a JSON or CSV data file and press "Import."',
   'file_import.csv_options': 'CSV import options:',
@@ -112,6 +114,6 @@ export default {
 
   'code.json_tab': 'JSON config',
   'code.es2015_tab': 'ES2015/TypeScript with JSON',
-  'code.html_js_tab': 'HTML &amp; JavaScript',
+  'code.html_js_tab': 'HTML & JavaScript',
   'code.object_js_tab': 'Object-style ES2015'
 };

@@ -4,6 +4,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.0.0-rc.0] - 2020-10-26
+### Changed
+- Updated core internal and external dependencies to the newest versions
+
+## [4.0.0-beta.5] - 2020-10-15
+### Added
+- Better handling of external data source set on the chart
+- Ability to set custom data field name
+
+### Fixed
+- Crash when changing data field to "(not set)" and switching to Code module
+
+## [4.0.0-beta.4] - 2020-10-02
+### Added
+- Language switching to Vue and React demos.
+- State of the home page is now preserved when switching to/from Desing, etc.
+
+### Changed
+- Switched routing to hash-style for wider compatibility and server-side independence.
+
+### Fixed
+- Added missing type declaration files for language packs.
+- There were no scrollbars in Data editor for larger datasets.
+- Minor language file fixes.
+
 ## [4.0.0-beta.3] - 2020-09-17
 ### Added
 - Localization system. English, Lithuanian (UI-only) and Russian (UI-only) localizations included.
@@ -100,6 +125,9 @@ be fetched on the client for both compilation and runtime performance.
 ### Added
 - Initial public release.
 
+[4.0.0-rc.0]: https://github.com/amcharts/editor4/releases/tag/v4.0.0-rc.0
+[4.0.0-beta.5]: https://github.com/amcharts/editor4/releases/tag/v4.0.0-beta.5
+[4.0.0-beta.4]: https://github.com/amcharts/editor4/releases/tag/v4.0.0-beta.4
 [4.0.0-beta.3]: https://github.com/amcharts/editor4/releases/tag/v4.0.0-beta.3
 [4.0.0-beta.2]: https://github.com/amcharts/editor4/releases/tag/v4.0.0-beta.2
 [4.0.0-beta.1]: https://github.com/amcharts/editor4/releases/tag/v4.0.0-beta.1
